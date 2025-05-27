@@ -9,9 +9,8 @@ GitHub Actions에 워크플로우를 작성해 다음과 같이 배포가 진행
 3. npm run build 명령어로 Next.js 프로젝트를 빌드합니다.
 (예: next export 결과물이 out/ 폴더에 생성됨)
 4. GitHub Secrets에 등록된 자격 증명을 바탕으로 AWS 인증을 구성합니다.
-5. GitHub Secrets에 등록된 자격 증명을 바탕으로 AWS 인증을 구성합니다.
-6. 빌드된 정적 파일을 aws s3 sync 명령어로 S3 버킷에 업로드(동기화)합니다.
-7. aws cloudfront create-invalidation 명령어를 통해 CloudFront 캐시를 무효화하여 최신 파일이 사용자에게 제공되도록 합니다.
+5. 빌드된 정적 파일을 aws s3 sync 명령어로 S3 버킷에 업로드(동기화)합니다.
+6. aws cloudfront create-invalidation 명령어를 통해 CloudFront 캐시를 무효화하여 최신 파일이 사용자에게 제공되도록 합니다.
 
 ### 📦 주요 링크
 S3 버킷 웹사이트 엔드포인트: https://<your-bucket-name>.s3-website.<region>.amazonaws.com
