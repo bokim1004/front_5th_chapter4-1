@@ -33,7 +33,7 @@ CloudFront 배포 도메인 이름: https://dcrpqw4gqr0ey.cloudfront.net/
 ### 📘 주요 개념
 - GitHub Actions과 CI/CD 도구:<br/>
 GitHub Actions는 코드 변경 시 자동으로 빌드, 테스트, 배포 과정을 수행하는 CI/CD(지속적 통합 및 배포) 도구입니다. 이를 통해 배포 과정을 자동화하고 안정적으로 관리할 수 있습니다.<br/>
-`예시`: main 브랜치에 코드가 push되면, 자동으로 npm run build → S3 업로드 → CloudFront 캐시 무효화까지 진행됩니다.
+`예시`: main 브랜치에 코드가 push되면, GitHub Actions가 자동으로 npm run build → S3 업로드 → CloudFront 캐시 무효화까지  배포 전 과정을 자동으로 수행합니다.
 
 - S3와 스토리지:<br/>
 Amazon S3는 정적 웹사이트 파일(HTML, CSS, JS 등)을 저장하고 호스팅할 수 있는 객체 스토리지 서비스입니다. 빠르고 안정적으로 정적 자산을 제공하는 데 적합합니다.<br/>
