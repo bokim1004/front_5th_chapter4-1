@@ -26,9 +26,9 @@ GitHub Actions에 워크플로우를 작성해 다음과 같이 배포가 진행
 - /* 경로를 무효화하여 전체 캐시를 갱신합니다.
 
 ### 📦 주요 링크
-S3 버킷 웹사이트 엔드포인트: https://<your-bucket-name>.s3-website.<region>.amazonaws.com
+S3 버킷 웹사이트 엔드포인트:  http://hanghae-infra-task.s3-website-ap-southeast-2.amazonaws.com/
 
-CloudFront 배포 도메인 이름: https://<your-distribution-id>.cloudfront.net
+CloudFront 배포 도메인 이름: https://dcrpqw4gqr0ey.cloudfront.net/
 
 ### 📚 주요 개념
 개념	설명
