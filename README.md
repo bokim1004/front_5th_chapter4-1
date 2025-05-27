@@ -9,10 +9,10 @@ GitHub Actions에 워크플로우를 작성해 다음과 같이 배포가 진행
 1. 레포지토리 소스를 현재 워크플로우 환경으로 가져옵니다.
 2. `npm ci` 명령어를 통해 프로젝트 의존성을 설치합니다.
 - CI/CD 환경에서 안정성을 확보하기 위해 npm install 대신 `npm ci` 사용
-3. npm run build 명령어로 Next.js 프로젝트를 빌드합니다.
+3. `npm run build` 명령어로 Next.js 프로젝트를 빌드합니다.
 -  next export 결과물이 out/ 폴더에 생성됩니다.
 4. GitHub Secrets에 등록된 자격 증명을 바탕으로 AWS 인증을 구성합니다.
-- GitHub Secrets에 저장된 AWS IAM 키로 인증합니다.
+- AWS IAM 계정 생성 시 받은 액세스 키, 비밀 액세스 키를 GitHub Repository Secrets에 추가합니다.
 - 이후 AWS CLI 명령어를 사용 가능하도록 설정합니다.
 5. 빌드된 정적 파일을 aws s3 sync 명령어로 S3 버킷에 업로드(동기화)합니다.
 - out/ 디렉토리의 정적 파일을 S3 버킷에 동기화합니다.
