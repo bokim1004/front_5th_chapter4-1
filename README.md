@@ -31,18 +31,24 @@ S3 버킷 웹사이트 엔드포인트:  http://hanghae-infra-task.s3-website-ap
 CloudFront 배포 도메인 이름: https://dcrpqw4gqr0ey.cloudfront.net/
 
 ### 📘 주요 개념
-- GitHub Actions과 CI/CD 도구:
-GitHub Actions는 코드 변경 시 자동으로 빌드, 테스트, 배포 과정을 수행하는 CI/CD(지속적 통합 및 배포) 도구입니다. 이를 통해 배포 과정을 자동화하고 안정적으로 관리할 수 있습니다.
+- GitHub Actions과 CI/CD 도구:<br/>
+GitHub Actions는 코드 변경 시 자동으로 빌드, 테스트, 배포 과정을 수행하는 CI/CD(지속적 통합 및 배포) 도구입니다. 이를 통해 배포 과정을 자동화하고 안정적으로 관리할 수 있습니다.<br/>
+`예시`: main 브랜치에 코드가 push되면, 자동으로 npm run build → S3 업로드 → CloudFront 캐시 무효화까지 진행됩니다.
 
-- S3와 스토리지:
-Amazon S3는 정적 웹사이트 파일(HTML, CSS, JS 등)을 저장하고 호스팅할 수 있는 객체 스토리지 서비스입니다. 빠르고 안정적으로 정적 자산을 제공하는 데 적합합니다.
+- S3와 스토리지:<br/>
+Amazon S3는 정적 웹사이트 파일(HTML, CSS, JS 등)을 저장하고 호스팅할 수 있는 객체 스토리지 서비스입니다. 빠르고 안정적으로 정적 자산을 제공하는 데 적합합니다.<br/>
+`예시`: out/ 디렉토리에 생성된 Next.js 정적 파일을 `hanghae-infra-task`라는 S3 버킷에 업로드하여 배포합니다.
 
-- CloudFront와 CDN:
-Amazon CloudFront는 S3에 저장된 정적 파일을 전 세계 엣지 서버에 캐싱하여 빠르게 전달하는 CDN(콘텐츠 전송 네트워크)입니다. 사용자와 가까운 서버에서 콘텐츠를 제공해 지연 시간을 줄입니다.
+- CloudFront와 CDN:<br/>
+Amazon CloudFront는 S3에 저장된 정적 파일을 전 세계 엣지 서버에 캐싱하여 빠르게 전달하는 CDN(콘텐츠 전송 네트워크)입니다. 사용자와 가까운 서버에서 콘텐츠를 제공해 지연 시간을 줄입니다.<br/>
+`예시`: 한국 사용자가 사이트에 접속하면, 한국에 위치한 엣지 서버에서 콘텐츠를 바로 제공받아 빠른 로딩이 가능합니다.
 
-- 캐시 무효화(Cache Invalidation):
-CloudFront는 성능 향상을 위해 파일을 캐시하지만, 변경된 파일이 즉시 반영되지 않을 수 있습니다. 캐시 무효화는 기존 캐시를 제거하고 최신 파일로 갱신되도록 하는 작업입니다.
 
-- Repository secret과 환경변수:
-GitHub Actions에서 민감한 정보를 안전하게 사용하기 위해 Repository Secrets를 활용합니다. AWS 자격 증명, 배포 대상 버킷명 등은 외부에 노출되지 않도록 환경변수로 관리합니다.
+- 캐시 무효화(Cache Invalidation):<br/>
+CloudFront는 성능 향상을 위해 파일을 캐시하지만, 변경된 파일이 즉시 반영되지 않을 수 있습니다. 캐시 무효화는 기존 캐시를 제거하고 최신 파일로 갱신되도록 하는 작업입니다.<br/>
+`예시`: 새로 빌드한 파일이 배포된 후, `aws cloudfront create-invalidation --paths "/*"` 명령어로 기존 캐시를 무효화하여 사용자가 변경 사항을 즉시 확인할 수 있도록 합니다.
+
+- Repository secret과 환경변수:<br/>
+GitHub Actions에서 민감한 정보를 안전하게 사용하기 위해 Repository Secrets를 활용합니다. AWS 자격 증명, 배포 대상 버킷명 등은 외부에 노출되지 않도록 환경변수로 관리합니다.<br/>
+`예시`: 워크플로우에서 ${{ secrets.AWS_ACCESS_KEY_ID }} 형태로 IAM 키를 불러와 CLI 인증을 수행합니다.
 
