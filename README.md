@@ -30,11 +30,19 @@ S3 버킷 웹사이트 엔드포인트:  http://hanghae-infra-task.s3-website-ap
 
 CloudFront 배포 도메인 이름: https://dcrpqw4gqr0ey.cloudfront.net/
 
-### 📚 주요 개념
-개념	설명
-GitHub Actions와 CI/CD 도구	코드가 main 브랜치에 푸시될 때 자동으로 빌드·배포 과정을 실행하는 CI/CD 플랫폼
-S3와 스토리지	AWS의 정적 파일 저장 서비스로, 빌드 결과물을 호스팅하는 데 사용됨
-CloudFront와 CDN	S3에 저장된 정적 콘텐츠를 전 세계에 빠르게 배포해주는 CDN 서비스
-캐시 무효화 (Cache Invalidation)	CloudFront가 이전에 캐시해둔 파일을 제거하고, 최신 버전의 파일로 교체되도록 하는 작업
-Repository Secrets와 환경변수	AWS 인증 정보(AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, 등)를 안전하게 GitHub에 저장하여 워크플로우에서 사용
+### 📘 주요 개념
+- GitHub Actions과 CI/CD 도구:
+GitHub Actions는 코드 변경 시 자동으로 빌드, 테스트, 배포 과정을 수행하는 CI/CD(지속적 통합 및 배포) 도구입니다. 이를 통해 배포 과정을 자동화하고 안정적으로 관리할 수 있습니다.
+
+- S3와 스토리지:
+Amazon S3는 정적 웹사이트 파일(HTML, CSS, JS 등)을 저장하고 호스팅할 수 있는 객체 스토리지 서비스입니다. 빠르고 안정적으로 정적 자산을 제공하는 데 적합합니다.
+
+- CloudFront와 CDN:
+Amazon CloudFront는 S3에 저장된 정적 파일을 전 세계 엣지 서버에 캐싱하여 빠르게 전달하는 CDN(콘텐츠 전송 네트워크)입니다. 사용자와 가까운 서버에서 콘텐츠를 제공해 지연 시간을 줄입니다.
+
+- 캐시 무효화(Cache Invalidation):
+CloudFront는 성능 향상을 위해 파일을 캐시하지만, 변경된 파일이 즉시 반영되지 않을 수 있습니다. 캐시 무효화는 기존 캐시를 제거하고 최신 파일로 갱신되도록 하는 작업입니다.
+
+- Repository secret과 환경변수:
+GitHub Actions에서 민감한 정보를 안전하게 사용하기 위해 Repository Secrets를 활용합니다. AWS 자격 증명, 배포 대상 버킷명 등은 외부에 노출되지 않도록 환경변수로 관리합니다.
 
