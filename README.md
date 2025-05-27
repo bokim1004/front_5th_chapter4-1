@@ -1,7 +1,10 @@
 
 ## 프론트엔드 배포 파이프라인
 
-![image](https://github.com/user-attachments/assets/2b0870b0-d726-4a16-9333-a161e96f1650)
+<p>
+ <img src="https://velog.velcdn.com/images/chloeee/post/2f6769ba-5b39-4949-bb3b-753aad7b3564/image.png" alt="image" width="500px"/>
+</p>
+
 
  GitHub Actions를 사용해 Next.js 애플리케이션을 Amazon S3에 자동으로 배포하고, CloudFront 캐시를 무효화하는 배포 파이프라인을 설명하고자 합니다.
 
