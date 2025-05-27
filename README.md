@@ -8,7 +8,7 @@
 
  GitHub Actions를 사용해 Next.js 애플리케이션을 Amazon S3에 자동으로 배포하고, CloudFront 캐시를 무효화하는 배포 파이프라인을 설명하고자 합니다.
 
-GitHub Actions에 워크플로우를 작성해 다음과 같이 배포가 진행되도록 했습니다.
+GitHub Actions에 워크플로우`.github/workflows/deployment.yml`를 작성해 다음과 같이 배포가 진행되도록 했습니다.
 1. 레포지토리 소스를 현재 워크플로우 환경으로 가져옵니다.
 2. `npm ci` 명령어를 통해 프로젝트 의존성을 설치합니다.
    - CI/CD 환경에서 안정성을 확보하기 위해 npm install 대신 `npm ci` 사용
