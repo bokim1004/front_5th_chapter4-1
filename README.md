@@ -11,19 +11,19 @@
 GitHub Actions에 워크플로우를 작성해 다음과 같이 배포가 진행되도록 했습니다.
 1. 레포지토리 소스를 현재 워크플로우 환경으로 가져옵니다.
 2. `npm ci` 명령어를 통해 프로젝트 의존성을 설치합니다.
-- CI/CD 환경에서 안정성을 확보하기 위해 npm install 대신 `npm ci` 사용
+   - CI/CD 환경에서 안정성을 확보하기 위해 npm install 대신 `npm ci` 사용
 3. `npm run build` 명령어로 Next.js 프로젝트를 빌드합니다.
--  next export 결과물이 out/ 폴더에 생성됩니다.
+   -  next export 결과물이 out/ 폴더에 생성됩니다.
 4. GitHub Secrets에 등록된 자격 증명을 바탕으로 AWS 인증을 구성합니다.
-- AWS IAM 계정 생성 시 받은 액세스 키, 비밀 액세스 키를 GitHub Repository Secrets에 추가합니다.
-- 이후 AWS CLI 명령어를 사용 가능하도록 설정합니다.
+   - AWS IAM 계정 생성 시 받은 액세스 키, 비밀 액세스 키를 GitHub Repository Secrets에 추가합니다.
+   - 이후 AWS CLI 명령어를 사용 가능하도록 설정합니다.
 5. 빌드된 정적 파일을 aws s3 sync 명령어로 S3 버킷에 업로드(동기화)합니다.
-- out/ 디렉토리의 정적 파일을 S3 버킷에 동기화합니다.
-- `--delete 옵션`을 통해 S3에서 제거된 파일도 삭제되어 항상 최신 상태 유지됩니다.
+   - out/ 디렉토리의 정적 파일을 S3 버킷에 동기화합니다.
+   - `--delete 옵션`을 통해 S3에서 제거된 파일도 삭제되어 항상 최신 상태 유지됩니다.
 6. aws cloudfront create-invalidation 명령어를 통해 `CloudFront 캐시를 무효화`하여 최신 파일이 사용자에게 제공되도록 합니다.
-- CloudFront는 성능 향상을 위해 정적 파일을 캐시합니다.
-- 배포 후에도 사용자 브라우저에서 최신 파일을 보도록 하려면 캐시 무효화가 필요합니다.
-- /* 경로를 무효화하여 전체 캐시를 갱신합니다.
+  - CloudFront는 성능 향상을 위해 정적 파일을 캐시합니다.
+  - 배포 후에도 사용자 브라우저에서 최신 파일을 보도록 하려면 캐시 무효화가 필요합니다.
+  - /* 경로를 무효화하여 전체 캐시를 갱신합니다.
 
 ### 📦 주요 링크
 S3 버킷 웹사이트 엔드포인트:  http://hanghae-infra-task.s3-website-ap-southeast-2.amazonaws.com/
