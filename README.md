@@ -2,7 +2,7 @@
 ## 프론트엔드 배포 파이프라인
 
 <p>
- <img src="https://velog.velcdn.com/images/chloeee/post/2f6769ba-5b39-4949-bb3b-753aad7b3564/image.png" alt="image" width="500px"/>
+ <img src="https://velog.velcdn.com/images/chloeee/post/2f6769ba-5b39-4949-bb3b-753aad7b3564/image.png" alt="image" width="700px"/>
 </p>
 
 
