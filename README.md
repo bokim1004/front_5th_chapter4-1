@@ -52,3 +52,34 @@ CloudFront는 성능 향상을 위해 파일을 캐시하지만, 변경된 파�
 GitHub Actions에서 민감한 정보를 안전하게 사용하기 위해 Repository Secrets를 활용합니다. AWS 자격 증명, 배포 대상 버킷명 등은 외부에 노출되지 않도록 환경변수로 관리합니다.<br/>
 `예시`: 워크플로우에서 ${{ secrets.AWS_ACCESS_KEY_ID }} 형태로 IAM 키를 불러와 CLI 인증을 수행합니다.
 
+## CDN과 성능최적화
+
+CDN 도입 전과 도입 후의 성능 비교를 위해 3가지 방법으로 분석해보았습니다.
+
+### 1. 네트워크 탭에서 비교해보기
+
+ - CDN 도입 전
+![스크린샷 2025-05-28 오전 10 29 50](https://github.com/user-attachments/assets/22b634c3-e82d-4cbf-b4c8-169a9f96463c)
+ - CDN 도입 후
+![스크린샷 2025-05-28 오전 10 34 26](https://github.com/user-attachments/assets/83b1b0e7-9364-4c34-a317-b3309b8fa25c)
+
+CDN 도입 전과 후를 비교해봤을 때 크기는 동일하지만 CDN도입 후의 웹사이트에서 시간이 훨씬 더 줄었음을 볼 수 있었습니다.
+
+### 2.Lighthouse에서 비교해보기
+
+- CDN 도입 전
+![스크린샷 2025-05-28 오전 10 36 11](https://github.com/user-attachments/assets/cb0c816b-ded0-446c-b79c-269070634aaf)
+- CDN 도입 후
+![스크린샷 2025-05-28 오전 10 37 11](https://github.com/user-attachments/assets/37379039-72d1-4284-b651-038cfc7a48a1)
+
+CDN 도입 전과 후를 비교해봤을 때 CDN 도입 후에 속도가 조금 더 빨라졌음을 볼 수 있었습니다.
+
+### 3.PageSpeed Insights에서 비교해보기
+
+- CDN 도입 전
+![스크린샷 2025-05-28 오전 10 39 29](https://github.com/user-attachments/assets/b6c1c6f9-a0c7-4c16-bdac-a73c4400a9c2
+
+- CDN 도입 후
+![스크린샷 2025-05-28 오전 10 40 12](https://github.com/user-attachments/assets/dbb63670-f283-4f65-b31a-db899bf0adfb)
+  
+CDN 도입 전과 후를 비교해봤을 때 도입 후에 LCP의 속도와 Speed Index가 빨라졌음을 볼 수 있었습니다.
