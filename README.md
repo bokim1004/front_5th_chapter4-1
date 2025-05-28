@@ -79,7 +79,7 @@ CDN 도입 전과 후를 비교해봤을 때 CDN 도입 후에 속도가 조금 
 ### 3.PageSpeed Insights에서 비교해보기
 
 - CDN 도입 전
-![스크린샷 2025-05-28 오전 10 39 29](https://github.com/user-attachments/assets/b6c1c6f9-a0c7-4c16-bdac-a73c4400a9c2
+![스크린샷 2025-05-28 오전 10 39 29](https://github.com/user-attachments/assets/b6c1c6f9-a0c7-4c16-bdac-a73c4400a9c2)
 
 - CDN 도입 후
 ![스크린샷 2025-05-28 오전 10 40 12](https://github.com/user-attachments/assets/dbb63670-f283-4f65-b31a-db899bf0adfb)
