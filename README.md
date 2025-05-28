@@ -60,6 +60,7 @@ CDN 도입 전과 도입 후의 성능 비교를 위해 3가지 방법으로 분
 
  - CDN 도입 전
 ![스크린샷 2025-05-28 오전 10 29 50](https://github.com/user-attachments/assets/22b634c3-e82d-4cbf-b4c8-169a9f96463c)
+
  - CDN 도입 후
 ![스크린샷 2025-05-28 오전 10 34 26](https://github.com/user-attachments/assets/83b1b0e7-9364-4c34-a317-b3309b8fa25c)
 
@@ -69,6 +70,7 @@ CDN 도입 전과 후를 비교해봤을 때 크기는 동일하지만 CDN도입
 
 - CDN 도입 전
 ![스크린샷 2025-05-28 오전 10 36 11](https://github.com/user-attachments/assets/cb0c816b-ded0-446c-b79c-269070634aaf)
+
 - CDN 도입 후
 ![스크린샷 2025-05-28 오전 10 37 11](https://github.com/user-attachments/assets/37379039-72d1-4284-b651-038cfc7a48a1)
 
