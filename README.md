@@ -54,10 +54,12 @@ GitHub Actions에서 민감한 정보를 안전하게 사용하기 위해 Reposi
 
 ## CDN과 성능최적화
 
-CDN 도입 전과 도입 후의 성능 비교를 위해 3가지 방법으로 분석해보았습니다.
+CDN 도입 효과를 객관적으로 검증하기 위해 3가지 방법으로 성능을 측정하였습니다.
 
-### 1. 네트워크 탭에서 비교해보기
+### 1. Network 탭 비교
 
+- 테스트 URL: S3 웹사이트 엔드포인트 vs CloudFront 도메인
+  
  - CDN 도입 전
 ![스크린샷 2025-05-28 오전 10 29 50](https://github.com/user-attachments/assets/22b634c3-e82d-4cbf-b4c8-169a9f96463c)
 
@@ -66,7 +68,7 @@ CDN 도입 전과 도입 후의 성능 비교를 위해 3가지 방법으로 분
 
 CDN 도입 전과 후를 비교해봤을 때 크기는 동일하지만 CDN도입 후의 웹사이트에서 시간이 훨씬 더 줄었음을 볼 수 있었습니다.
 
-### 2.Lighthouse에서 비교해보기
+### 2.Lighthouse 비교
 
 - CDN 도입 전 <br/>
 ![스크린샷 2025-05-28 오전 10 36 11](https://github.com/user-attachments/assets/cb0c816b-ded0-446c-b79c-269070634aaf)
@@ -76,7 +78,7 @@ CDN 도입 전과 후를 비교해봤을 때 크기는 동일하지만 CDN도입
 
 CDN 도입 전과 후를 비교해봤을 때 CDN 도입 후에 속도가 조금 더 빨라졌음을 볼 수 있었습니다.
 
-### 3.PageSpeed Insights에서 비교해보기
+### 3.PageSpeed Insights 비교
 
 - CDN 도입 전
 ![스크린샷 2025-05-28 오전 10 39 29](https://github.com/user-attachments/assets/b6c1c6f9-a0c7-4c16-bdac-a73c4400a9c2)
@@ -84,4 +86,13 @@ CDN 도입 전과 후를 비교해봤을 때 CDN 도입 후에 속도가 조금 
 - CDN 도입 후
 ![스크린샷 2025-05-28 오전 10 40 12](https://github.com/user-attachments/assets/dbb63670-f283-4f65-b31a-db899bf0adfb)
   
-CDN 도입 전과 후를 비교해봤을 때 도입 후에 LCP의 속도와 Speed Index가 빨라졌음을 볼 수 있었습니다.
+CDN 도입 전과 후를 비교해봤을 때 도입 후에 LCP의 속도와 Speed Index가 빨라졌음을 볼 수 있었습니다. <br/>
+
+ `LCP (Largest Contentful Paint)`: 주요 콘텐츠가 로드되는 시간으로 사용자 체감 속도와 직결됩니다.<br/>
+`Speed Index`: 페이지의 시각적 로딩 속도를 수치화한 지표로 낮을수록 좋습니다.
+
+### 결론
+
+CDN 도입 후에 전반적으로 속도가 빨라졌음을 확인할 수 있었습니다.
+
+
