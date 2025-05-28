@@ -76,7 +76,7 @@ CDN 도입 전과 후를 비교해봤을 때 크기는 동일하지만 CDN도입
 - CDN 도입 후 <br/>
 ![스크린샷 2025-05-28 오전 10 37 11](https://github.com/user-attachments/assets/37379039-72d1-4284-b651-038cfc7a48a1)
 
-CDN 도입 전과 후를 비교해봤을 때 CDN 도입 후에 속도가 조금 더 빨라졌음을 볼 수 있었습니다.
+CDN 도입 전과 후를 비교해봤을 때 FCP,LCP는 같았지만 CDN 도입 후에 Speed Index가 줄어 속도가 조금 더 빨라졌음을 볼 수 있었습니다.
 
 ### 3.PageSpeed Insights 비교
 
